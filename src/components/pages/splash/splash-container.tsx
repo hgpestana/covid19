@@ -1,31 +1,22 @@
-import React, {Component} from 'react';
+/*global setTimeout*/
+import React, {Component, ReactElement} from 'react';
 import SplashView from './splash-view';
-import {Redirect} from 'react-router';
-import {generateLink} from '../../../routes/paths';
-import {PATH_INFORMATION} from '../../../constants';
+import {Router} from '../../../routes';
 
-class SplashContainer extends Component<any, {startupFinished: boolean}> {
-  state = {
+class SplashContainer extends Component<{}, {startupFinished: boolean}> {
+  public state = {
     startupFinished: false,
   };
 
-  componentDidMount(): void {
+  public componentDidMount(): void {
     setTimeout(() => this.setState({startupFinished: true}), 3000);
   }
 
-  render(): React.ReactElement<any> {
+  public render(): ReactElement<JSX.Element> {
     if (this.state.startupFinished) {
-      return (
-        <Redirect
-          push={true}
-          to={{
-            pathname: generateLink(PATH_INFORMATION),
-            state: {...this.state},
-          }}
-        />
-      );
+      return <Router/>;
     }
-    return <SplashView />;
+    return <SplashView/>;
   }
 }
 
