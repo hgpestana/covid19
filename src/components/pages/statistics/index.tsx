@@ -1,1 +1,1 @@
-export {default as Statistics} from './statistics-container';
+export {default as Statistics} from './statistics-view';
