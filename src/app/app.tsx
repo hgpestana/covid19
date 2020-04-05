@@ -1,7 +1,9 @@
+/*global console*/
 import React from 'react';
-import {Router} from '../routes';
+import {Splash} from '../components/pages';
 
-const App = () => {
-  return <Router />;
+const App = (): React.ReactElement<JSX.Element> => {
+  console.disableYellowBox = true;
+  return <Splash />;
 };
 export default App;
