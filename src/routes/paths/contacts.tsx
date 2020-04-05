@@ -1,25 +1,19 @@
-import {
-  PATH_CONTACTS,
-  ROUTE_BAR_COLOR,
-  ROUTE_ICON,
-  ROUTE_KEY,
-  ROUTE_NAME,
-  ROUTE_PARENT,
-  ROUTE_PATH,
-  ROUTE_PRESS_COLOR,
-  ROUTE_SECTION,
-  MENU,
-} from '../../constants';
+import {MENU} from '../../constants';
+import {Route} from '../types/routes';
+import {CONTACT_COLOR, CONTACT_COLOR_SECONDARY} from '../../constants/colors';
 
-export const contactsPaths: any = {
-  [PATH_CONTACTS]: {
-    [ROUTE_KEY]: 'contacts',
-    [ROUTE_PATH]: '/contacts',
-    [ROUTE_PARENT]: null,
-    [ROUTE_NAME]: 'Contatos',
-    [ROUTE_ICON]: 'phone',
-    [ROUTE_BAR_COLOR]: '#ccc',
-    [ROUTE_PRESS_COLOR]: '#ddd',
-    [ROUTE_SECTION]: MENU,
+export enum ContactsPaths {
+  CONTACTS = 'contacts',
+}
+
+export const contactsPaths: Array<Route> = [
+  {
+    key: ContactsPaths.CONTACTS,
+    path: '/contacts',
+    name: 'Contatos',
+    icon: 'phone',
+    barColor: CONTACT_COLOR,
+    pressColor: CONTACT_COLOR_SECONDARY,
+    section: MENU,
   },
-};
+];

@@ -1,22 +1,19 @@
-import {
-  PATH_STATISTICS, ROUTE_BAR_COLOR,
-  ROUTE_ICON, ROUTE_KEY,
-  ROUTE_NAME,
-  ROUTE_PARENT,
-  ROUTE_PATH, ROUTE_PRESS_COLOR,
-  ROUTE_SECTION,
-  MENU,
-} from '../../constants';
+import {MENU} from '../../constants';
+import {Route} from '../types/routes';
+import {STATISTICS_COLOR, STATISTICS_COLOR_SECONDARY} from '../../constants/colors';
 
-export const statisticsPaths: any = {
-  [PATH_STATISTICS]: {
-    [ROUTE_KEY]: 'statistics',
-    [ROUTE_PATH]: '/statistics',
-    [ROUTE_PARENT]: null,
-    [ROUTE_NAME]: 'Estatísticas',
-    [ROUTE_ICON]: 'graph',
-    [ROUTE_BAR_COLOR]: '#ccc',
-    [ROUTE_PRESS_COLOR]: '#ddd',
-    [ROUTE_SECTION]: MENU,
+export enum StatisticsPaths {
+  STATISTICS = 'statistics',
+}
+
+export const statisticsPaths: Array<Route> = [
+  {
+    key: StatisticsPaths.STATISTICS,
+    path: '/statistics',
+    name: 'Estatísticas',
+    icon: 'assessment',
+    barColor: STATISTICS_COLOR,
+    pressColor: STATISTICS_COLOR_SECONDARY,
+    section: MENU,
   },
-};
+];

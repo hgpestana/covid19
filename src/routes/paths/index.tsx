@@ -1,35 +1,38 @@
 import {generatePath} from 'react-router';
-import {splashPaths} from './splash';
 import {contactsPaths} from './contacts';
 import {informationPaths} from './information';
-import {newsPaths} from './news';
+import {bulletinPaths} from './bulletin';
 import {statisticsPaths} from './statistics';
+import {DEFAULT_PATH, Paths, Route} from '../types/routes';
+import {worldPaths} from './world';
 
-export const paths: any = {
-  ...splashPaths,
-  ...contactsPaths,
+export const paths: Array<Route> = [
   ...informationPaths,
-  ...newsPaths,
+  ...bulletinPaths,
   ...statisticsPaths,
-};
+  ...worldPaths,
+  ...contactsPaths,
+];
 
-export function generateLink(name: string, params?: any | undefined) {
-  let route = generateRoute(name);
-  return generatePath(route, params);
-}
-
-export function generateTabs() {
-  paths.map(path => {
-
+export function generateRoute(name: Paths): string {
+  const route: Route | undefined = paths.find((path: Route): boolean => {
+    return path.key === name;
   });
+
+  if (route !== undefined) {
+    // eslint-disable-next-line prefer-const
+    let {path, parent} = route;
+    if (parent !== undefined) {
+      const prefix = generateRoute(parent);
+      path = prefix + path;
+    }
+    return path;
+  }
+
+  return DEFAULT_PATH;
 }
 
-export function generateRoute(name: string) {
-  let route = paths[name];
-  let {ROUTE_PATH, ROUTE_PARENT} = route;
-  if (ROUTE_PARENT !== null) {
-    let prefix = generateRoute(ROUTE_PARENT);
-    ROUTE_PATH = prefix + ROUTE_PATH;
-  }
-  return ROUTE_PATH;
+export function generateLink(name: Paths, params?: { [paramName: string]: string | number | boolean | undefined } | undefined): string {
+  const route = generateRoute(name);
+  return generatePath(route, params);
 }
