@@ -1,5 +1,0 @@
-export const PATH_SPLASH = 'PATH_SPLASH';
-export const PATH_NEWS = 'PATH_NEWS';
-export const PATH_STATISTICS = 'PATH_STATISTICS';
-export const PATH_CONTACTS = 'PATH_CONTACTS';
-export const PATH_INFORMATION = 'PATH_INFORMATION';
