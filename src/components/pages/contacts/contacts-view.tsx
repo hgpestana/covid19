@@ -1,11 +1,12 @@
 import React, {Component, ReactElement} from 'react';
 import {SafeAreaView, TextStyle} from 'react-native';
-import {CONTACT_COLOR_SECONDARY, SECONDARY_COLOR, SECONDARY_TEXT_COLOR} from '../../../constants/colors';
+import {CONTACT_COLOR_SECONDARY, SECONDARY_COLOR, SECONDARY_TEXT_COLOR} from '../../../constants/';
 import {Text} from 'react-native-elements';
 import ContactCard from '../../atoms/ContactCard';
-import {Contact, ContactViewProps} from '../../../types/contact';
+import {Contact, StoreProps} from '../../../types/';
+import {storeWrapper} from '../../../storeWrapper';
 
-class ContactsView extends Component <ContactViewProps> {
+class ContactsView extends Component <StoreProps> {
   private contactTextTitle: TextStyle = {
     fontFamily: 'Roboto-Bold',
     color: SECONDARY_COLOR,
@@ -51,4 +52,4 @@ class ContactsView extends Component <ContactViewProps> {
   };
 }
 
-export default ContactsView;
+export default storeWrapper(ContactsView);

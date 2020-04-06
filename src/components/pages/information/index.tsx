@@ -1,1 +1,1 @@
-export {default as Information} from './information-container';
+export {default as Information} from './information-view';

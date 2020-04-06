@@ -1,1 +1,1 @@
-export {default as Contacts} from './contacts-container';
+export {default as Contacts} from './contacts-view';

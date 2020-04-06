@@ -1,9 +1,10 @@
 import React, {Component, ReactElement} from 'react';
 import {ActivityIndicator, Dimensions, SafeAreaView, ScaledSize} from 'react-native';
-import {BulletinViewProps} from '../../../types/bulletin';
 import BulletinCard, {BulletinInformation} from '../../atoms/BulletinCard';
+import {StoreProps} from '../../../types';
+import {storeWrapper} from '../../../storeWrapper';
 
-class BulletinView extends Component<BulletinViewProps> {
+class BulletinView extends Component<StoreProps> {
   private dimensions: ScaledSize = Dimensions.get('window');
 
   public render(): ReactElement<JSX.Element> {
@@ -32,4 +33,4 @@ class BulletinView extends Component<BulletinViewProps> {
   };
 }
 
-export default BulletinView;
+export default storeWrapper(BulletinView);

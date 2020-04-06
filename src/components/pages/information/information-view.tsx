@@ -1,10 +1,11 @@
 import React, {Component, ReactElement} from 'react';
 import {Dimensions, SafeAreaView, ScaledSize, View} from 'react-native';
-import {INFORMATION_COLOR} from '../../../constants/colors';
+import {INFORMATION_COLOR} from '../../../constants';
 import YoutubePlayer from '../../organisms/YoutubePlayer';
-import {Information, InformationViewProps} from '../../../types/information';
+import {Information, StoreProps} from '../../../types';
+import {storeWrapper} from '../../../storeWrapper';
 
-class InformationView extends Component<InformationViewProps> {
+class InformationView extends Component<StoreProps> {
   private dimensions: ScaledSize = Dimensions.get('window');
 
   public render(): ReactElement<JSX.Element> {
@@ -39,4 +40,4 @@ class InformationView extends Component<InformationViewProps> {
   };
 }
 
-export default InformationView;
+export default storeWrapper(InformationView);

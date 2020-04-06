@@ -1,0 +1,6 @@
+export const SET_INFORMATION = 'SET_INFORMATION';
+export type SET_INFORMATION = typeof SET_INFORMATION;
+export const SET_CONTACTS = 'SET_CONTACTS';
+export type SET_CONTACTS = typeof SET_CONTACTS;
+export const SET_BULLETINS = 'SET_BULLETINS';
+export type SET_BULLETINS = typeof SET_BULLETINS;

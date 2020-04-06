@@ -2,7 +2,7 @@ import React, {Component, ReactElement} from 'react';
 import WebView, {WebViewMessageEvent} from 'react-native-webview';
 import {ActivityIndicator, StyleProp, TextStyle, View, ViewStyle} from 'react-native';
 import {Text} from 'react-native-elements';
-import {DEFAULT_COLOR} from '../../constants/colors';
+import {DEFAULT_COLOR} from '../../constants';
 
 export type YoutubePlayerProps = {
   height: number;

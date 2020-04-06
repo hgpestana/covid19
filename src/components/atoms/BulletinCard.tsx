@@ -1,7 +1,7 @@
 import React, {Component, ReactElement} from 'react';
 import {Dimensions, Linking, ScaledSize, StyleSheet, TextStyle, View, ViewStyle} from 'react-native';
 import {Button, Text} from 'react-native-elements';
-import {BULLETIN_COLOR, BULLETIN_COLOR_SECONDARY, DEFAULT_COLOR} from '../../constants/colors';
+import {BULLETIN_COLOR, BULLETIN_COLOR_SECONDARY, DEFAULT_COLOR} from '../../constants';
 
 export type BulletinInformation = {
   name: string;

@@ -1,1 +1,1 @@
-export {default as Bulletin} from './bulletin-container';
+export {default as Bulletin} from './bulletin-view';
