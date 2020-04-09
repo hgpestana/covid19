@@ -52,15 +52,42 @@ class SplashContainer extends Component<StoreProps, {startupFinished: boolean}> 
         phone: '+351 800 24 60 24',
       },
       {
+        label: 'Linha Criança',
+        description: 'Linha de apoio à criança na R.A.M.',
+        phone: '+351 969 319 732',
+      },
+      {
+        label: 'Linha Maior 65',
+        description: 'Linha de apoio aos maiores 65 na R.A.M.',
+        phone: '+351 800 20 25 65',
+      },
+      {
         label: 'Informações Açores',
         description: 'Outras dúvidas na R.A.A.',
         phone: '+351 800 29 29 29',
+      },
+      {
+        label: 'Apoio Empresas / Cidadãos',
+        description: 'Linha de apoio na R.A.M.',
+        phone: '+351 800 29 90 90',
       },
     ]);
   };
 
   private _setInformation = (): void => {
     this.props.setInformation([
+      {
+        caption: 'Conselhos gerais INEM',
+        videoId: 'EG1TMnvzHEs',
+      },
+      {
+        caption: 'Conselhos no isolamento - LG',
+        videoId: 't7bMXQx4nwE',
+      },
+      {
+        caption: 'Medidas de prevenção - LG',
+        videoId: 'xgyW3mddHMw',
+      },
       {
         caption: 'Normas apoio ERPI',
         videoId: 'FBKlbf9qOcs',
