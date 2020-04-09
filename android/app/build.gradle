@@ -133,8 +133,8 @@ android {
         applicationId "com.hgpestana.covid19"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.0-alpha.1"
         multiDexEnabled true
     }
     splits {
@@ -147,17 +147,17 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('/home/hgpestana/keystore/debug.jks')
+            storeFile file('/home/hgpestana/ke0.0.1ystore/debug.jks')
             storePassword 'android'
             keyAlias = 'androiddebug'
             keyPassword 'android'
         }
         release {
-            if (project.hasProperty(project.env.get('COVID19_UPLOAD_STORE_FILE'))) {
-                storeFile file(project.env.get('COVID19_UPLOAD_STORE_FILE'))
-                storePassword project.env.get('COVID19_UPLOAD_STORE_PASSWORD')
-                keyAlias project.env.get('COVID19_UPLOAD_KEY_ALIAS')
-                keyPassword project.env.get('COVID19_UPLOAD_KEY_PASSWORD')
+            if (project.hasProperty('COVID19_UPLOAD_STORE_FILE')) {
+                storeFile file(COVID19_UPLOAD_STORE_FILE)
+                storePassword COVID19_UPLOAD_STORE_PASSWORD
+                keyAlias COVID19_UPLOAD_KEY_ALIAS
+                keyPassword COVID19_UPLOAD_KEY_PASSWORD
             }
         }
     }
