@@ -1,13 +1,13 @@
-import React, {Component, ReactElement} from 'react';
-import {SafeAreaView, TextStyle} from 'react-native';
+import React, {FunctionComponent} from 'react';
+import {ScrollView, TextStyle} from 'react-native';
 import {CONTACT_COLOR_SECONDARY, SECONDARY_COLOR, SECONDARY_TEXT_COLOR} from '../../../constants/';
 import {Text} from 'react-native-elements';
 import ContactCard from '../../atoms/ContactCard';
 import {Contact, StoreProps} from '../../../types/';
 import {storeWrapper} from '../../../storeWrapper';
 
-class ContactsView extends Component <StoreProps> {
-  private contactTextTitle: TextStyle = {
+const ContactsView: FunctionComponent<StoreProps> = (props) => {
+  const contactTextTitle: TextStyle = {
     fontFamily: 'Roboto-Bold',
     color: SECONDARY_COLOR,
     textTransform: 'uppercase',
@@ -16,26 +16,15 @@ class ContactsView extends Component <StoreProps> {
     marginTop: 30,
     marginBottom: 10,
   };
-  private contactTextDescription: TextStyle = {
+  const contactTextDescription: TextStyle = {
     fontFamily: 'Roboto-Regular',
     textTransform: 'uppercase',
     fontSize: 15,
     marginHorizontal: 10,
     marginBottom: 15,
   };
-
-  public render(): ReactElement<JSX.Element> {
-    return (
-      <SafeAreaView>
-        <Text style={this.contactTextTitle}>Teve contacto com COVID-19?</Text>
-        <Text style={this.contactTextDescription}>Se tiver tosse, febre ou dificuldade respiratória, ligue:</Text>
-        {this._generateContactCards()}
-      </SafeAreaView>
-    );
-  }
-
-  private _generateContactCards = (): Array<JSX.Element> => {
-    return this.props.contacts.map((contact: Contact, index: number) => {
+  const _generateContactCards = (): Array<JSX.Element> => {
+    return props.contacts.map((contact: Contact, index: number) => {
       return (
         <ContactCard
           key={index}
@@ -50,6 +39,14 @@ class ContactsView extends Component <StoreProps> {
       );
     });
   };
-}
+
+  return (
+    <ScrollView>
+      <Text style={contactTextTitle}>Teve contacto com COVID-19?</Text>
+      <Text style={contactTextDescription}>Se tiver tosse, febre ou dificuldade respiratória, ligue:</Text>
+      {_generateContactCards()}
+    </ScrollView>
+  );
+};
 
 export default storeWrapper(ContactsView);
