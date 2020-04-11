@@ -52,7 +52,7 @@ class BulletinCard extends Component<BulletinProps> {
     },
     buttonStyle: {
       width: 100,
-      height: 40,
+      height: 48,
       marginVertical: 20,
     },
     dateStyle: {

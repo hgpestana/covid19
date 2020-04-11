@@ -13,7 +13,7 @@ class SplashContainer extends Component<StoreProps, {startupFinished: boolean}> 
   };
 
   public componentDidMount = async (): Promise<void> => {
-    await this._setInformation();
+    this._setInformation();
     this._setContacts();
     this._setBulletins();
     this._startupFinished();

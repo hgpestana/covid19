@@ -147,7 +147,7 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('/home/hgpestana/ke0.0.1ystore/debug.jks')
+            storeFile file('/home/hgpestana/keystore/debug.jks')
             storePassword 'android'
             keyAlias = 'androiddebug'
             keyPassword 'android'
