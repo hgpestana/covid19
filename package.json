@@ -15,7 +15,7 @@
     "pandemic",
     "sars-cov-2"
   ],
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "private": false,
   "scripts": {
     "android": "react-native run-android",
