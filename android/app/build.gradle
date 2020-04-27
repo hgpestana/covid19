@@ -134,8 +134,8 @@ android {
         applicationId "com.hgpestana.covid19"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 4
-        versionName "1.0.0-alpha.3"
+        versionCode 5
+        versionName "1.0.0-alpha.4"
         multiDexEnabled true
     }
     splits {
