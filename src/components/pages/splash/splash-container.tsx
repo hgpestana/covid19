@@ -105,10 +105,6 @@ class SplashContainer extends Component<StoreProps, {startupFinished: boolean}> 
         videoId: 'tcQ5zH2yAdg',
       },
       {
-        caption: 'Cuidar dos séniores',
-        videoId: 't47HuKohqr4',
-      },
-      {
         caption: 'Técnica lavagem mãos',
         videoId: '_TzLRKoCHxQ',
       },
